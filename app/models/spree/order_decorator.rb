@@ -42,8 +42,8 @@ module Spree
     end
 
     def invoice_for_order
-      bookkeeping_documents.create(template: 'invoice')
-      bookkeeping_documents.create(template: 'packaging_slip')
+      bookkeeping_documents.create(template: 'invoice') unless bookkeeping_documents.find_by(template: 'invoice')
+      bookkeeping_documents.create(template: 'packaging_slip') unless bookkeeping_documents.find_by(template: 'packaging_slip')
     end
   end
 end

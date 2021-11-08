@@ -1,4 +1,4 @@
-<% if can? :show, Spree::Order %>
+<% if can? :show, Spree::BookkeepingDocument %>
   <% if @order && @order.completed_at? %>
     <li data-hook="admin_order_tabs_bookkeeping_documents">
       <%=
