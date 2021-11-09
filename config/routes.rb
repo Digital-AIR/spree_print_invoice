@@ -10,4 +10,12 @@ Spree::Core::Engine.add_routes do
     resource :print_invoice_settings, only: [:edit, :update]
     resources :bookkeeping_documents, only: [:index, :show]
   end
+
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v2 do
+      namespace :storefront do
+        resources :bookkeeping_documents, only: [:show]
+      end
+    end
+  end 
 end
